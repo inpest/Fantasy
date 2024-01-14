@@ -87,7 +87,11 @@ namespace Fantasy
         private void CameraInitialize(bool addAudioListener)
         {
             GameObject cameraGameObject = null;
+            
+#if UNITY_2022_2_OR_NEWER
             var objects = Object.FindObjectsByType<Camera>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+#endif
+            var objects = Object.FindObjectsOfType<Camera>();
             
             foreach (var camera in objects)
             {
