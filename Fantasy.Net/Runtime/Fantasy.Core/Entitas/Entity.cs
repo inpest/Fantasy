@@ -673,6 +673,7 @@ namespace Fantasy
 
                 Log.Error(e);
             }
+            EntitiesSystem.Instance.Deserialize(this);
         }
 
         #endregion
